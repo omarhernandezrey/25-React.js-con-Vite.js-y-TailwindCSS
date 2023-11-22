@@ -1,5 +1,5 @@
+import { XMarkIcon  } from '@heroicons/react/24/solid'
 import React from 'react';
-import { XMarkIcon } from '@heroicons/react/24/solid'
 import './styles.css'
 
 const ProductDetail = () => {
