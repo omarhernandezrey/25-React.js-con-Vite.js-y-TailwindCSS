@@ -1,15 +1,10 @@
-import React, { useContext } from 'react';
-import { XMarkIcon } from '@heroicons/react/24/solid';
-import { ShoppingCartContext } from '../../Context';
-import './styles.css';
+import { useContext } from 'react'
+import { XMarkIcon } from '@heroicons/react/24/solid'
+import { ShoppingCartContext } from '../../Context'
+import './styles.css'
 
 const ProductDetail = () => {
-  const context = useContext(ShoppingCartContext);
-
-  // Verificar si context.productToShow existe
-  if (!context.productToShow) {
-    return null; // O puedes devolver un mensaje indicando que no hay detalles disponibles
-  }
+  const context = useContext(ShoppingCartContext)
 
   return (
     <aside
@@ -23,10 +18,9 @@ const ProductDetail = () => {
         </div>
       </div>
       <figure className='px-6'>
-        {/* Utilizar el operador de fusión nula para evitar errores si context.productToShow.images es undefined */}
         <img
           className='w-full h-full rounded-lg'
-          src={context.productToShow.images?.[0]}
+          src={context.productToShow.images}
           alt={context.productToShow.title} />
       </figure>
       <p className='flex flex-col p-6'>
@@ -35,7 +29,7 @@ const ProductDetail = () => {
         <span className='font-light text-sm'>${context.productToShow.description}</span>
       </p>
     </aside>
-  );
+  )
 }
 
-export default ProductDetail;
+export default ProductDetail
